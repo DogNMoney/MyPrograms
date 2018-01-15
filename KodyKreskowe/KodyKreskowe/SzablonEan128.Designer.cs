@@ -41,21 +41,22 @@
             // 
             this.PictureBoxKod.Location = new System.Drawing.Point(12, 38);
             this.PictureBoxKod.Name = "PictureBoxKod";
-            this.PictureBoxKod.Size = new System.Drawing.Size(610, 101);
+            this.PictureBoxKod.Size = new System.Drawing.Size(610, 161);
             this.PictureBoxKod.TabIndex = 1;
             this.PictureBoxKod.TabStop = false;
+            this.PictureBoxKod.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxKod_MouseClick);
             // 
             // SzablonEan128
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 161);
+            this.ClientSize = new System.Drawing.Size(634, 211);
             this.Controls.Add(this.PictureBoxKod);
             this.Controls.Add(this.TextBoxInfoNadKodem);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(650, 200);
-            this.MinimumSize = new System.Drawing.Size(650, 200);
+            this.MaximumSize = new System.Drawing.Size(650, 250);
+            this.MinimumSize = new System.Drawing.Size(650, 250);
             this.Name = "SzablonEan128";
             this.Text = "Ean128";
             this.Load += new System.EventHandler(this.SzablonEan128_Load);

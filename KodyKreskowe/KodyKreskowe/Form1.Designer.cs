@@ -31,6 +31,8 @@
             this.TextBoxKodDoWygenerowaniaWartosc = new System.Windows.Forms.TextBox();
             this.LabelKodDoWygenerowaniaOpis = new System.Windows.Forms.Label();
             this.ButtonGenerujKod = new System.Windows.Forms.Button();
+            this.TextBoxOpisNadKodem = new System.Windows.Forms.TextBox();
+            this.LabelOpisNadTextBoxOpisu = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LabelDokonajWyboru
@@ -50,6 +52,7 @@
             this.RadioButtonEan13.Name = "RadioButtonEan13";
             this.RadioButtonEan13.Size = new System.Drawing.Size(56, 17);
             this.RadioButtonEan13.TabIndex = 0;
+            this.RadioButtonEan13.TabStop = true;
             this.RadioButtonEan13.Text = "Ean13";
             this.RadioButtonEan13.UseVisualStyleBackColor = true;
             this.RadioButtonEan13.CheckedChanged += new System.EventHandler(this.RadioButtonEan13_CheckedChanged);
@@ -78,15 +81,15 @@
             // 
             // TextBoxKodDoWygenerowaniaWartosc
             // 
-            this.TextBoxKodDoWygenerowaniaWartosc.Location = new System.Drawing.Point(15, 51);
+            this.TextBoxKodDoWygenerowaniaWartosc.Location = new System.Drawing.Point(15, 100);
             this.TextBoxKodDoWygenerowaniaWartosc.Name = "TextBoxKodDoWygenerowaniaWartosc";
             this.TextBoxKodDoWygenerowaniaWartosc.Size = new System.Drawing.Size(557, 20);
-            this.TextBoxKodDoWygenerowaniaWartosc.TabIndex = 1;
+            this.TextBoxKodDoWygenerowaniaWartosc.TabIndex = 2;
             // 
             // LabelKodDoWygenerowaniaOpis
             // 
             this.LabelKodDoWygenerowaniaOpis.AutoSize = true;
-            this.LabelKodDoWygenerowaniaOpis.Location = new System.Drawing.Point(12, 35);
+            this.LabelKodDoWygenerowaniaOpis.Location = new System.Drawing.Point(12, 84);
             this.LabelKodDoWygenerowaniaOpis.Name = "LabelKodDoWygenerowaniaOpis";
             this.LabelKodDoWygenerowaniaOpis.Size = new System.Drawing.Size(121, 13);
             this.LabelKodDoWygenerowaniaOpis.TabIndex = 0;
@@ -94,19 +97,38 @@
             // 
             // ButtonGenerujKod
             // 
-            this.ButtonGenerujKod.Location = new System.Drawing.Point(15, 77);
+            this.ButtonGenerujKod.Location = new System.Drawing.Point(15, 126);
             this.ButtonGenerujKod.Name = "ButtonGenerujKod";
             this.ButtonGenerujKod.Size = new System.Drawing.Size(75, 23);
-            this.ButtonGenerujKod.TabIndex = 2;
+            this.ButtonGenerujKod.TabIndex = 3;
             this.ButtonGenerujKod.Text = "&Generuj kod";
             this.ButtonGenerujKod.UseVisualStyleBackColor = true;
             this.ButtonGenerujKod.Click += new System.EventHandler(this.ButtonGenerujKod_Click);
+            // 
+            // TextBoxOpisNadKodem
+            // 
+            this.TextBoxOpisNadKodem.Location = new System.Drawing.Point(15, 52);
+            this.TextBoxOpisNadKodem.MaxLength = 50;
+            this.TextBoxOpisNadKodem.Name = "TextBoxOpisNadKodem";
+            this.TextBoxOpisNadKodem.Size = new System.Drawing.Size(364, 20);
+            this.TextBoxOpisNadKodem.TabIndex = 1;
+            // 
+            // LabelOpisNadTextBoxOpisu
+            // 
+            this.LabelOpisNadTextBoxOpisu.AutoSize = true;
+            this.LabelOpisNadTextBoxOpisu.Location = new System.Drawing.Point(12, 36);
+            this.LabelOpisNadTextBoxOpisu.Name = "LabelOpisNadTextBoxOpisu";
+            this.LabelOpisNadTextBoxOpisu.Size = new System.Drawing.Size(87, 13);
+            this.LabelOpisNadTextBoxOpisu.TabIndex = 4;
+            this.LabelOpisNadTextBoxOpisu.Text = "Opis nad kodem:";
             // 
             // KodyKreskowe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 111);
+            this.ClientSize = new System.Drawing.Size(584, 161);
+            this.Controls.Add(this.LabelOpisNadTextBoxOpisu);
+            this.Controls.Add(this.TextBoxOpisNadKodem);
             this.Controls.Add(this.ButtonGenerujKod);
             this.Controls.Add(this.LabelKodDoWygenerowaniaOpis);
             this.Controls.Add(this.TextBoxKodDoWygenerowaniaWartosc);
@@ -116,8 +138,8 @@
             this.Controls.Add(this.LabelDokonajWyboru);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(600, 150);
-            this.MinimumSize = new System.Drawing.Size(600, 150);
+            this.MaximumSize = new System.Drawing.Size(600, 200);
+            this.MinimumSize = new System.Drawing.Size(600, 200);
             this.Name = "KodyKreskowe";
             this.Text = "KodyKreskowe";
             this.ResumeLayout(false);
@@ -134,6 +156,8 @@
         private System.Windows.Forms.TextBox TextBoxKodDoWygenerowaniaWartosc;
         private System.Windows.Forms.Label LabelKodDoWygenerowaniaOpis;
         private System.Windows.Forms.Button ButtonGenerujKod;
+        private System.Windows.Forms.TextBox TextBoxOpisNadKodem;
+        private System.Windows.Forms.Label LabelOpisNadTextBoxOpisu;
     }
 }
 

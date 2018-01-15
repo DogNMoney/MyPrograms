@@ -49,20 +49,26 @@ namespace KodyKreskowe {
                     MessageBox.Show("Nie podałeś kodu do wygenerowania!", "Komunikat", MessageBoxButtons.OK);
                 } else {
                     if(flagaean13 == true) {
-                        SzablonEan13 wygenerowanyeanform = new SzablonEan13();
-                        wygenerowanyeanform.Informacjanadkodem = TextBoxKodDoWygenerowaniaWartosc.Text;
-                        wygenerowanyeanform.Show();
+                        if(TextBoxKodDoWygenerowaniaWartosc.Text.Length != 13) {
+                            MessageBox.Show("Wprowadzony kod ean13 jest nieprawidłowy!", "Komunikat", MessageBoxButtons.OK);
+                        } else {
+                            SzablonEan13 wygenerowanyeanform = new SzablonEan13();
+                            wygenerowanyeanform.Kod = TextBoxKodDoWygenerowaniaWartosc.Text;
+                            wygenerowanyeanform.Informacjanadkodem = TextBoxOpisNadKodem.Text;
+                            wygenerowanyeanform.Show();
+                        }
                     }
                     if(flagacode128 == true) {
-                        SzablonCode128 wygenerowanyform = new SzablonCode128();
-                        wygenerowanyform.Informacjanadkodem = TextBoxKodDoWygenerowaniaWartosc.Text;
-                        wygenerowanyform.Show();
+                        SzablonCode128 wygenerowanyeanform = new SzablonCode128();
+                        wygenerowanyeanform.Kod = TextBoxKodDoWygenerowaniaWartosc.Text;
+                        wygenerowanyeanform.Informacjanadkodem = TextBoxOpisNadKodem.Text;
+                        wygenerowanyeanform.Show();
                     }
                     if(flagaean128 == true) {
-                        //Wersja probna ean128, zakodowane w ciemno
-                        SzablonEan128 wygenerowanyform = new SzablonEan128();
-                        wygenerowanyform.Informacjanadkodem = TextBoxKodDoWygenerowaniaWartosc.Text;
-                        wygenerowanyform.Show();
+                        SzablonEan128 wygenerowanyeanform = new SzablonEan128();
+                        wygenerowanyeanform.Kod = TextBoxKodDoWygenerowaniaWartosc.Text;
+                        wygenerowanyeanform.Informacjanadkodem = TextBoxOpisNadKodem.Text;
+                        wygenerowanyeanform.Show();
                     }
                 }
             } catch(Exception ex) {

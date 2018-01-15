@@ -22,23 +22,35 @@ namespace KodyKreskowe {
         public string Kod { get => kod; set => kod = value; }
 
         public void SkonfigurujKod() {
-            TextBoxInfoNadKodem.Text = informacjanadkodem;
+            TextBoxInfoNadKodem.Text = kod;
             ean128.Type = BarcodeLib.Barcode.BarcodeType.EAN128;
-            ean128.Data = informacjanadkodem;
+            ean128.Data = kod;
             ean128.ImageFormat = System.Drawing.Imaging.ImageFormat.Jpeg;
             ean128.BarColor = Color.Black;
             ean128.LeftMargin = 4;
             ean128.RightMargin = 4;
             ean128.BarWidth = 2;
+            ean128.TopMargin = 20;
+            ean128.ImageHeight = PictureBoxKod.Height - 15;
+            ean128.ImageWidth = PictureBoxKod.Width;
         }
 
         public void WyswietlKod() {
             PictureBoxKod.Image = ean128.drawBarcode();
+            Graphics graphics = Graphics.FromImage(PictureBoxKod.Image);
+            Font font = new Font("TimesNewRoman", 10, FontStyle.Bold, GraphicsUnit.Pixel);
+            graphics.DrawString(informacjanadkodem, font, Brushes.Black, new Point(0, 0));
         }
 
         private void SzablonEan128_Load(object sender, EventArgs e) {
             SkonfigurujKod();
             WyswietlKod();
+        }
+
+        private void PictureBoxKod_MouseClick(object sender, MouseEventArgs e) {
+            if (e.Button == MouseButtons.Right) {
+                Clipboard.SetImage(PictureBoxKod.Image);
+            }
         }
     }
 }

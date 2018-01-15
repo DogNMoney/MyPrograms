@@ -32,9 +32,10 @@
             // 
             this.PictureBoxKod.Location = new System.Drawing.Point(12, 38);
             this.PictureBoxKod.Name = "PictureBoxKod";
-            this.PictureBoxKod.Size = new System.Drawing.Size(260, 103);
+            this.PictureBoxKod.Size = new System.Drawing.Size(260, 111);
             this.PictureBoxKod.TabIndex = 0;
             this.PictureBoxKod.TabStop = false;
+            this.PictureBoxKod.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxKod_MouseClick);
             // 
             // TextBoxInfoNadKodem
             // 
