@@ -33,6 +33,8 @@
             this.ButtonGenerujKod = new System.Windows.Forms.Button();
             this.TextBoxOpisNadKodem = new System.Windows.Forms.TextBox();
             this.LabelOpisNadTextBoxOpisu = new System.Windows.Forms.Label();
+            this.PictureBoxHelp = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxHelp)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelDokonajWyboru
@@ -122,11 +124,25 @@
             this.LabelOpisNadTextBoxOpisu.TabIndex = 4;
             this.LabelOpisNadTextBoxOpisu.Text = "Opis nad kodem:";
             // 
+            // PictureBoxHelp
+            // 
+            this.PictureBoxHelp.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxHelp.Image")));
+            this.PictureBoxHelp.InitialImage = ((System.Drawing.Image)(resources.GetObject("PictureBoxHelp.InitialImage")));
+            this.PictureBoxHelp.Location = new System.Drawing.Point(529, 7);
+            this.PictureBoxHelp.MaximumSize = new System.Drawing.Size(50, 50);
+            this.PictureBoxHelp.MinimumSize = new System.Drawing.Size(50, 50);
+            this.PictureBoxHelp.Name = "PictureBoxHelp";
+            this.PictureBoxHelp.Size = new System.Drawing.Size(50, 50);
+            this.PictureBoxHelp.TabIndex = 5;
+            this.PictureBoxHelp.TabStop = false;
+            this.PictureBoxHelp.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxHelp_MouseClick);
+            // 
             // KodyKreskowe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 161);
+            this.Controls.Add(this.PictureBoxHelp);
             this.Controls.Add(this.LabelOpisNadTextBoxOpisu);
             this.Controls.Add(this.TextBoxOpisNadKodem);
             this.Controls.Add(this.ButtonGenerujKod);
@@ -142,6 +158,7 @@
             this.MinimumSize = new System.Drawing.Size(600, 200);
             this.Name = "KodyKreskowe";
             this.Text = "KodyKreskowe";
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxHelp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,6 +175,7 @@
         private System.Windows.Forms.Button ButtonGenerujKod;
         private System.Windows.Forms.TextBox TextBoxOpisNadKodem;
         private System.Windows.Forms.Label LabelOpisNadTextBoxOpisu;
+        private System.Windows.Forms.PictureBox PictureBoxHelp;
     }
 }
 

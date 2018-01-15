@@ -75,5 +75,10 @@ namespace KodyKreskowe {
                 MessageBox.Show(ex.Message, "Komunikat", MessageBoxButtons.OK);
             }
         }
+
+        private void PictureBoxHelp_MouseClick(object sender, MouseEventArgs e) {
+            MessageBox.Show("Okno pomocy dostępne w przyszłej wersji projektu", "Komunikat", MessageBoxButtons.OK);
+            //TODO Do zrobienia encyklopedia przykładowych kodów kreskowych
+        }
     }
 }
