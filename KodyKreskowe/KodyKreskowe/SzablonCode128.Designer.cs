@@ -54,6 +54,7 @@
             this.Controls.Add(this.PictureBoxKod);
             this.Controls.Add(this.TextBoxInfoNadKodem);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(410, 230);
             this.MinimumSize = new System.Drawing.Size(410, 230);
             this.Name = "SzablonCode128";
