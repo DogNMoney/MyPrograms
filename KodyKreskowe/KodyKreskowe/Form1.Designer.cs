@@ -28,12 +28,12 @@
             this.RadioButtonEan13 = new System.Windows.Forms.RadioButton();
             this.RadioButtonCode128 = new System.Windows.Forms.RadioButton();
             this.RadioButtonEan128 = new System.Windows.Forms.RadioButton();
-            this.TextBoxKodDoWygenerowaniaWartosc = new System.Windows.Forms.TextBox();
             this.LabelKodDoWygenerowaniaOpis = new System.Windows.Forms.Label();
             this.ButtonGenerujKod = new System.Windows.Forms.Button();
             this.TextBoxOpisNadKodem = new System.Windows.Forms.TextBox();
             this.LabelOpisNadTextBoxOpisu = new System.Windows.Forms.Label();
             this.PictureBoxHelp = new System.Windows.Forms.PictureBox();
+            this.ComboBoxKodDoWygenerowaniaWartosc = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxHelp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,6 @@
             this.RadioButtonEan13.Name = "RadioButtonEan13";
             this.RadioButtonEan13.Size = new System.Drawing.Size(56, 17);
             this.RadioButtonEan13.TabIndex = 0;
-            this.RadioButtonEan13.TabStop = true;
             this.RadioButtonEan13.Text = "Ean13";
             this.RadioButtonEan13.UseVisualStyleBackColor = true;
             this.RadioButtonEan13.CheckedChanged += new System.EventHandler(this.RadioButtonEan13_CheckedChanged);
@@ -81,13 +80,6 @@
             this.RadioButtonEan128.UseVisualStyleBackColor = true;
             this.RadioButtonEan128.CheckedChanged += new System.EventHandler(this.RadioButtonEan128_CheckedChanged);
             // 
-            // TextBoxKodDoWygenerowaniaWartosc
-            // 
-            this.TextBoxKodDoWygenerowaniaWartosc.Location = new System.Drawing.Point(15, 100);
-            this.TextBoxKodDoWygenerowaniaWartosc.Name = "TextBoxKodDoWygenerowaniaWartosc";
-            this.TextBoxKodDoWygenerowaniaWartosc.Size = new System.Drawing.Size(557, 20);
-            this.TextBoxKodDoWygenerowaniaWartosc.TabIndex = 2;
-            // 
             // LabelKodDoWygenerowaniaOpis
             // 
             this.LabelKodDoWygenerowaniaOpis.AutoSize = true;
@@ -113,7 +105,7 @@
             this.TextBoxOpisNadKodem.MaxLength = 50;
             this.TextBoxOpisNadKodem.Name = "TextBoxOpisNadKodem";
             this.TextBoxOpisNadKodem.Size = new System.Drawing.Size(364, 20);
-            this.TextBoxOpisNadKodem.TabIndex = 1;
+            this.TextBoxOpisNadKodem.TabIndex = 2;
             // 
             // LabelOpisNadTextBoxOpisu
             // 
@@ -137,17 +129,26 @@
             this.PictureBoxHelp.TabStop = false;
             this.PictureBoxHelp.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxHelp_MouseClick);
             // 
+            // ComboBoxKodDoWygenerowaniaWartosc
+            // 
+            this.ComboBoxKodDoWygenerowaniaWartosc.FormattingEnabled = true;
+            this.ComboBoxKodDoWygenerowaniaWartosc.Location = new System.Drawing.Point(12, 99);
+            this.ComboBoxKodDoWygenerowaniaWartosc.Name = "ComboBoxKodDoWygenerowaniaWartosc";
+            this.ComboBoxKodDoWygenerowaniaWartosc.Size = new System.Drawing.Size(557, 21);
+            this.ComboBoxKodDoWygenerowaniaWartosc.TabIndex = 1;
+            this.ComboBoxKodDoWygenerowaniaWartosc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ComboBoxKodDoWygenerowaniaWartosc_KeyDown);
+            // 
             // KodyKreskowe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 161);
+            this.Controls.Add(this.ComboBoxKodDoWygenerowaniaWartosc);
             this.Controls.Add(this.PictureBoxHelp);
             this.Controls.Add(this.LabelOpisNadTextBoxOpisu);
             this.Controls.Add(this.TextBoxOpisNadKodem);
             this.Controls.Add(this.ButtonGenerujKod);
             this.Controls.Add(this.LabelKodDoWygenerowaniaOpis);
-            this.Controls.Add(this.TextBoxKodDoWygenerowaniaWartosc);
             this.Controls.Add(this.RadioButtonEan128);
             this.Controls.Add(this.RadioButtonCode128);
             this.Controls.Add(this.RadioButtonEan13);
@@ -170,12 +171,12 @@
         private System.Windows.Forms.RadioButton RadioButtonEan13;
         private System.Windows.Forms.RadioButton RadioButtonCode128;
         private System.Windows.Forms.RadioButton RadioButtonEan128;
-        private System.Windows.Forms.TextBox TextBoxKodDoWygenerowaniaWartosc;
         private System.Windows.Forms.Label LabelKodDoWygenerowaniaOpis;
         private System.Windows.Forms.Button ButtonGenerujKod;
         private System.Windows.Forms.TextBox TextBoxOpisNadKodem;
         private System.Windows.Forms.Label LabelOpisNadTextBoxOpisu;
         private System.Windows.Forms.PictureBox PictureBoxHelp;
+        private System.Windows.Forms.ComboBox ComboBoxKodDoWygenerowaniaWartosc;
     }
 }
 
