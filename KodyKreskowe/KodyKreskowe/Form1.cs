@@ -102,7 +102,7 @@ namespace KodyKreskowe {
         }
 
         public static void ZapamietajKodCode128(String koddopliku) {
-            String path = "HistoriaCode13.txt";
+            String path = "HistoriaCode128.txt";
 
             try {
                 if (File.Exists(path)) {
