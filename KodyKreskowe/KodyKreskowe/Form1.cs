@@ -19,16 +19,24 @@ namespace KodyKreskowe {
         String[] historiacode128;
         String[] historiaean128;
 
+        String[] obejscie = { "Wprowadź kod" };
+
         public void WczytajHistorie() {
             try {
                 if (File.Exists("HistoriaEan13.txt")) {
                     historiaean13 = File.ReadAllLines("HistoriaEan13.txt");
+                } else {
+                    historiaean13 = obejscie;
                 }
                 if (File.Exists("HistoriaCode128.txt")) {
                     historiacode128 = File.ReadAllLines("HistoriaCode128.txt");
+                } else {
+                    historiacode128 = obejscie;
                 }
                 if (File.Exists("HistoriaEan128.txt")) {
                     historiaean128 = File.ReadAllLines("HistoriaEan128.txt");
+                } else {
+                    historiaean128 = obejscie;
                 }
             } catch(Exception ex) {
                 MessageBox.Show(ex.Message, "Komunikat", MessageBoxButtons.OK);
