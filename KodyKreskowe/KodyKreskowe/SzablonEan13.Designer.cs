@@ -53,12 +53,14 @@
             this.Controls.Add(this.TextBoxInfoNadKodem);
             this.Controls.Add(this.PictureBoxKod);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(300, 200);
             this.MinimumSize = new System.Drawing.Size(300, 200);
             this.Name = "SzablonEan13";
             this.Text = "Ean13";
             this.Load += new System.EventHandler(this.SzablonEan13_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SzablonEan13_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxKod)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

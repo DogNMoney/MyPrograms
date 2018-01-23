@@ -23,18 +23,12 @@ namespace KodyKreskowe {
             try {
                 if (File.Exists("HistoriaEan13.txt")) {
                     historiaean13 = File.ReadAllLines("HistoriaEan13.txt");
-                } else {
-                    MessageBox.Show("Nie udało się wczytać pliku z historią kodów ean13!", "Komunikat", MessageBoxButtons.OK);
                 }
                 if (File.Exists("HistoriaCode128.txt")) {
                     historiacode128 = File.ReadAllLines("HistoriaCode128.txt");
-                } else {
-                    MessageBox.Show("Nie udało się wczytać pliku z historią kodów code128!", "Komunikat", MessageBoxButtons.OK);
                 }
                 if (File.Exists("HistoriaEan128.txt")) {
                     historiaean128 = File.ReadAllLines("HistoriaEan128.txt");
-                } else {
-                    MessageBox.Show("Nie udało się wczytać pliku z historią kodów ean128!", "Komunikat", MessageBoxButtons.OK);
                 }
             } catch(Exception ex) {
                 MessageBox.Show(ex.Message, "Komunikat", MessageBoxButtons.OK);
@@ -153,85 +147,62 @@ namespace KodyKreskowe {
             }
         }
 
-        private void ButtonGenerujKod_Click(object sender, EventArgs e) {
+        public void GenerujKod() {
             try {
                 if (ComboBoxKodDoWygenerowaniaWartosc.Text == "" || String.IsNullOrWhiteSpace(ComboBoxKodDoWygenerowaniaWartosc.Text) == true ||
                 String.IsNullOrEmpty(ComboBoxKodDoWygenerowaniaWartosc.Text) == true) {
                     MessageBox.Show("Nie podałeś kodu do wygenerowania!", "Komunikat", MessageBoxButtons.OK);
                 } else {
-                    if(flagaean13 == true) {
-                        if(ComboBoxKodDoWygenerowaniaWartosc.Text.Length != 13) {
+                    if (flagaean13 == true) {
+                        if (ComboBoxKodDoWygenerowaniaWartosc.Text.Length != 13) {
                             MessageBox.Show("Wprowadzony kod ean13 jest nieprawidłowy!", "Komunikat", MessageBoxButtons.OK);
                         } else {
-                            ZapamietajKodEan13(ComboBoxKodDoWygenerowaniaWartosc.Text);
+                            if (!historiaean13.Contains(ComboBoxKodDoWygenerowaniaWartosc.Text)) {
+                                ZapamietajKodEan13(ComboBoxKodDoWygenerowaniaWartosc.Text);
+                            }
                             SzablonEan13 wygenerowanyeanform = new SzablonEan13();
                             wygenerowanyeanform.Kod = ComboBoxKodDoWygenerowaniaWartosc.Text;
                             wygenerowanyeanform.Informacjanadkodem = TextBoxOpisNadKodem.Text;
                             wygenerowanyeanform.Show();
                         }
                     }
-                    if(flagacode128 == true) {
-                        ZapamietajKodCode128(ComboBoxKodDoWygenerowaniaWartosc.Text);
+                    if (flagacode128 == true) {
+                        if (!historiacode128.Contains(ComboBoxKodDoWygenerowaniaWartosc.Text)) {
+                            ZapamietajKodCode128(ComboBoxKodDoWygenerowaniaWartosc.Text);
+                        }
                         SzablonCode128 wygenerowanyeanform = new SzablonCode128();
                         wygenerowanyeanform.Kod = ComboBoxKodDoWygenerowaniaWartosc.Text;
                         wygenerowanyeanform.Informacjanadkodem = TextBoxOpisNadKodem.Text;
                         wygenerowanyeanform.Show();
                     }
-                    if(flagaean128 == true) {
-                        ZapamietajKodEan128(ComboBoxKodDoWygenerowaniaWartosc.Text);
+                    if (flagaean128 == true) {
+                        if (!historiaean128.Contains(ComboBoxKodDoWygenerowaniaWartosc.Text)) {
+                            ZapamietajKodEan128(ComboBoxKodDoWygenerowaniaWartosc.Text);
+                        }
                         SzablonEan128 wygenerowanyeanform = new SzablonEan128();
                         wygenerowanyeanform.Kod = ComboBoxKodDoWygenerowaniaWartosc.Text;
                         wygenerowanyeanform.Informacjanadkodem = TextBoxOpisNadKodem.Text;
                         wygenerowanyeanform.Show();
                     }
                 }
-            } catch(Exception ex) {
+            } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Komunikat", MessageBoxButtons.OK);
+            }
+        }
+
+        private void ButtonGenerujKod_Click(object sender, EventArgs e) {
+            GenerujKod();
+        }
+
+        private void ComboBoxKodDoWygenerowaniaWartosc_KeyDown(object sender, KeyEventArgs e) {
+            if(e.KeyCode == Keys.Enter) {
+                GenerujKod();
             }
         }
 
         private void PictureBoxHelp_MouseClick(object sender, MouseEventArgs e) {
             MessageBox.Show("Okno pomocy dostępne w przyszłej wersji projektu", "Komunikat", MessageBoxButtons.OK);
             //TODO Do zrobienia encyklopedia przykładowych kodów kreskowych
-        }
-
-        private void ComboBoxKodDoWygenerowaniaWartosc_KeyDown(object sender, KeyEventArgs e) {
-            if(e.KeyCode == Keys.Enter) {
-                try {
-                    if (ComboBoxKodDoWygenerowaniaWartosc.Text == "" || String.IsNullOrWhiteSpace(ComboBoxKodDoWygenerowaniaWartosc.Text) == true ||
-                    String.IsNullOrEmpty(ComboBoxKodDoWygenerowaniaWartosc.Text) == true) {
-                        MessageBox.Show("Nie podałeś kodu do wygenerowania!", "Komunikat", MessageBoxButtons.OK);
-                    } else {
-                        if (flagaean13 == true) {
-                            if (ComboBoxKodDoWygenerowaniaWartosc.Text.Length != 13) {
-                                MessageBox.Show("Wprowadzony kod ean13 jest nieprawidłowy!", "Komunikat", MessageBoxButtons.OK);
-                            } else {
-                                ZapamietajKodEan13(ComboBoxKodDoWygenerowaniaWartosc.Text);
-                                SzablonEan13 wygenerowanyeanform = new SzablonEan13();
-                                wygenerowanyeanform.Kod = ComboBoxKodDoWygenerowaniaWartosc.Text;
-                                wygenerowanyeanform.Informacjanadkodem = TextBoxOpisNadKodem.Text;
-                                wygenerowanyeanform.Show();
-                            }
-                        }
-                        if (flagacode128 == true) {
-                            ZapamietajKodCode128(ComboBoxKodDoWygenerowaniaWartosc.Text);
-                            SzablonCode128 wygenerowanyeanform = new SzablonCode128();
-                            wygenerowanyeanform.Kod = ComboBoxKodDoWygenerowaniaWartosc.Text;
-                            wygenerowanyeanform.Informacjanadkodem = TextBoxOpisNadKodem.Text;
-                            wygenerowanyeanform.Show();
-                        }
-                        if (flagaean128 == true) {
-                            ZapamietajKodEan128(ComboBoxKodDoWygenerowaniaWartosc.Text);
-                            SzablonEan128 wygenerowanyeanform = new SzablonEan128();
-                            wygenerowanyeanform.Kod = ComboBoxKodDoWygenerowaniaWartosc.Text;
-                            wygenerowanyeanform.Informacjanadkodem = TextBoxOpisNadKodem.Text;
-                            wygenerowanyeanform.Show();
-                        }
-                    }
-                } catch (Exception ex) {
-                    MessageBox.Show(ex.Message, "Komunikat", MessageBoxButtons.OK);
-                }
-            }
         }
     }
 }

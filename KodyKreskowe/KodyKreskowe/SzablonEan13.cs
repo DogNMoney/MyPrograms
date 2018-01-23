@@ -52,5 +52,11 @@ namespace KodyKreskowe {
                 Clipboard.SetImage(PictureBoxKod.Image);
             }
         }
+
+        private void SzablonEan13_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Escape) {
+                this.Close();
+            }
+        }
     }
 }
