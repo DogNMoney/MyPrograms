@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EE.Designer.cs">
+      <DependentUpon>EE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="SzablonEan13.Designer.cs">
       <DependentUpon>SzablonEan13.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EE.resx">
+      <DependentUpon>EE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +106,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SzablonCode128.resx">
       <DependentUpon>SzablonCode128.cs</DependentUpon>
@@ -136,6 +146,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\Lib\Source\Empty\EasterEgg.jpg" />
     <Content Include="Book.jpg" />
     <Content Include="KodyKreskoweIco.ico" />
     <Content Include="Kody.txt" />

@@ -21,6 +21,8 @@ namespace KodyKreskowe {
 
         String[] obejscie = { "Wprowadź kod" };
 
+        int licznikGenerowan = 0;
+
         public void WczytajHistorie() {
             try {
                 if (File.Exists("HistoriaEan13.txt")) {
@@ -161,6 +163,11 @@ namespace KodyKreskowe {
                 String.IsNullOrEmpty(ComboBoxKodDoWygenerowaniaWartosc.Text) == true) {
                     MessageBox.Show("Nie podałeś kodu do wygenerowania!", "Komunikat", MessageBoxButtons.OK);
                 } else {
+                    licznikGenerowan++;
+                    if(licznikGenerowan%10 == 0) {
+                        EE easteregg = new EE();
+                        easteregg.Show();
+                    }
                     if (flagaean13 == true) {
                         if (ComboBoxKodDoWygenerowaniaWartosc.Text.Length != 13) {
                             MessageBox.Show("Wprowadzony kod ean13 jest nieprawidłowy!", "Komunikat", MessageBoxButtons.OK);
@@ -208,9 +215,10 @@ namespace KodyKreskowe {
             }
         }
 
-        private void PictureBoxHelp_MouseClick(object sender, MouseEventArgs e) {
+        private void ButtonHelp_Click(object sender, EventArgs e) {
             HelpForm oknopomocy = new HelpForm();
             oknopomocy.Show();
         }
+
     }
 }
